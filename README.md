@@ -12,7 +12,27 @@
 
 # Storage
 
-# Folder structure
+# Folder structure 
+Article: https://www.taniarascia.com/react-architecture-directory-structure/
+## Assets
+Global static assets such as images, svgs, company logo, etc.
+
+## Components 
+Global shared/reusable components, such as layout (wrappers, navigation), form components, buttons, (if your component is individual not for share, please put under your views(pages))
+
+## Services 
+JavaScript modules
+## Store
+Global Redux store
+
+## Utils
+Utilities, helpers, constants, and the like
+
+## Views
+Can also be called "pages", the majority of the app would be contained here
+
+## Middleware
+Application-level middleware, Router-level middleware, Error-handling middleware, Built-in middleware, Third-party middleware, Logger middleware
 
 [React Architecture: How to Structure and Organize a React Application](https://www.taniarascia.com/react-architecture-directory-structure/)
 
