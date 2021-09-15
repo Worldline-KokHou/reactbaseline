@@ -46,7 +46,9 @@ formatting config .editorconfig
 # ES lint
 Using standard eslint rules
 Run scripts
+
 to check --> eslint ./
+
 to fix   --> eslint ./ --fix
 
 # Global styling (Theme)
