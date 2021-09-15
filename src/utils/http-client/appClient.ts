@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import ENVIRONMENT from '../constants/environment.constant'
+import { ENVIRONMENT } from '@constants'
 
 const appClient = Axios.create({
   baseURL: ENVIRONMENT.baseUrl(),
@@ -13,4 +13,4 @@ if (!ENVIRONMENT.isProduction()) {
   console.log('AppClient Configuration: ', appClient.defaults)
 }
 
-export { appClient }
+export default appClient

@@ -1,3 +1,3 @@
-import AppButton from './AppButton/AppButton.component'
+import AppButton from './app-button/appButton'
 
 export { AppButton }

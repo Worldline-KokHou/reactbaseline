@@ -3,7 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@": ["src"],
-      "@components": ["src/components"]
+      "@components": ["src/components"],
+      "@services": ["src/services"],
+      "@constants": ["src/utils/constants"],
+      "@client": ["src/utils/http-client"]
     }
   }
 }

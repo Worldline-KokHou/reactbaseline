@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import {AppButton} from '@components'
+import { AppButton } from '@components'
+import { IpAddressService } from '@services'
 
 function App() {
+  const [ip, setIp] = useState('')
+
+  useEffect(() => {
+    IpAddressService.getIp()
+      .then((o) => o.data.ip)
+      .then(setIp)
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -25,6 +34,7 @@ function App() {
             alert('you click me')
           }}
         />
+        <div>Your IP: {ip || 'Loading...'}</div>
       </header>
     </div>
   )
