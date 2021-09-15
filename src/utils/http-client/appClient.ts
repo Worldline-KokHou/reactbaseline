@@ -3,7 +3,7 @@ import { ENVIRONMENT } from '@constants'
 
 const appClient = Axios.create({
   baseURL: ENVIRONMENT.baseUrl(),
-  timeout: 1, // 60 sec timeout
+  timeout: 60 * 1000, // 60 sec timeout
   headers: {
     'Content-Type': 'application/json'
   }
