@@ -14,6 +14,8 @@
 
 # Folder structure
 
+[React Architecture: How to Structure and Organize a React Application](https://www.taniarascia.com/react-architecture-directory-structure/)
+
 # Code formating
 
 # ES lint
