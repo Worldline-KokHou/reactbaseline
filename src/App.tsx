@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { AppButton } from '@components'
 import { IpAddressService } from '@services'
-import { useAppDispatch, useAppSelector } from './hooks/redux.hook'
-import { counterActions } from './store/slices/counter.slice'
+import CounterWidget from './views/counter/counter.widget'
 
 function App () {
-  const counter = useAppSelector((state) => state.counter.value)
-  const dispatch = useAppDispatch()
+  console.log('App')
+
   const [ip, setIp] = useState('')
 
   useEffect(() => {
@@ -20,7 +18,6 @@ function App () {
   return (
     <div className='App'>
       <header className='App-header'>
-        <div>Counter: {counter}</div>
         <img src={logo} className='App-logo' alt='logo'/>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -33,30 +30,7 @@ function App () {
         >
           Learn React
         </a>
-        <AppButton
-          label='Plus One'
-          onClick={() => {
-            dispatch(counterActions.increment())
-          }}
-        />
-        <AppButton
-          label='Minus One'
-          onClick={() => {
-            dispatch(counterActions.decrement())
-          }}
-        />
-        <AppButton
-          label='Double'
-          onClick={() => {
-            dispatch(counterActions.incrementByAmount(counter))
-          }}
-        />
-        <AppButton
-          label='reset'
-          onClick={() => {
-            dispatch(counterActions.reset())
-          }}
-        />
+        <CounterWidget/>
         <div>Your IP: {ip || 'Loading...'}</div>
       </header>
     </div>
