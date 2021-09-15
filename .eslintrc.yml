@@ -21,5 +21,7 @@ rules: {
   generator-star-spacing: off,
   object-curly-spacing: off,
   space-before-function-paren: off,
-  no-use-before-define: off
+  no-use-before-define: off,
+  no-unused-vars: off,
+  camelcase: off
 }

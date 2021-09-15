@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import { IpAddressService } from '@services'
 import CounterWidget from './views/counter/counter.widget'
+import PokemonWidget from './views/pokemon/pokemon.widget'
 
 function App () {
   console.log('App')
@@ -31,6 +32,8 @@ function App () {
           Learn React
         </a>
         <CounterWidget/>
+        <p/>
+        <PokemonWidget/>
         <div>Your IP: {ip || 'Loading...'}</div>
       </header>
     </div>
