@@ -12,15 +12,15 @@
 
 # Storage
 
-# Folder structure 
+# Folder structure
 Article: https://www.taniarascia.com/react-architecture-directory-structure/
 ## Assets
 Global static assets such as images, svgs, company logo, etc.
 
-## Components 
+## Components
 Global shared/reusable components, such as layout (wrappers, navigation), form components, buttons, (if your component is individual not for share, please put under your views(pages))
 
-## Services 
+## Services
 JavaScript modules
 ## Store
 Global Redux store
@@ -37,8 +37,13 @@ Application-level middleware, Router-level middleware, Error-handling middleware
 [React Architecture: How to Structure and Organize a React Application](https://www.taniarascia.com/react-architecture-directory-structure/)
 
 # Code formating
+formatting config .editorconfig
 
 # ES lint
+Using standard eslint rules
+Run scripts
+to check --> eslint ./
+to fix   --> eslint ./ --fix
 
 # Global styling (Theme)
 
