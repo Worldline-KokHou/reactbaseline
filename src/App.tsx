@@ -1,13 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { AppButton } from "@components";
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import {AppButton} from '@components'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo"/>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -22,12 +22,12 @@ function App() {
         <AppButton
           label="Hello"
           onClick={() => {
-            alert("you click me");
+            alert('you click me')
           }}
         />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

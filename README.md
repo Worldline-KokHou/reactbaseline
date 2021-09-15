@@ -38,7 +38,7 @@ Can also be called "pages", the majority of the app would be contained here
 ### Middleware
 Application-level middleware, Router-level middleware, Error-handling middleware, Built-in middleware, Third-party middleware, Logger middleware
 
-# Code formating
+# Code formatting
 formatting config .editorconfig
 
 # ES lint

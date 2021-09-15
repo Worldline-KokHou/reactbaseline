@@ -1,6 +1,7 @@
 env:
   browser: true
   es2021: true
+  jest: true
 extends:
   - 'plugin:react/recommended'
   - standard
@@ -16,4 +17,9 @@ plugins:
 settings:
   react:
     version: "detect"
-rules: {}
+rules: {
+  generator-star-spacing: off,
+  object-curly-spacing: off,
+  space-before-function-paren: off,
+  no-use-before-define: off
+}

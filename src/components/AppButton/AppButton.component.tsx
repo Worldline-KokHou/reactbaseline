@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 interface Props {
   label: string;
@@ -6,7 +6,7 @@ interface Props {
 }
 
 const AppButton = (props: Props) => {
-  return <button onClick={props.onClick}>{props.label}</button>;
-};
+  return <button onClick={props.onClick}>{props.label}</button>
+}
 
-export default AppButton;
+export default AppButton
