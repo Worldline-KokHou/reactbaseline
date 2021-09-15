@@ -1,5 +1,7 @@
 # State Management
+[React Redux](https://react-redux.js.org/introduction/getting-started)
 
+[Redux Toolkit](https://redux-toolkit.js.org/)
 # Rest API calling
 
 # Cache
