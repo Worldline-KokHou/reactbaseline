@@ -11,7 +11,13 @@ const PokemonWidget = () => {
   const pokemonList = useGetPokemonsQuery('0')
 
   if (pokemonList.data) {
-    return <div>{pokemonList.data!.results.map(pokemon => <div key={pokemon.name}>{pokemon.name}</div>)}</div>
+    return (
+      <div>
+        {pokemonList.data!.results.map((pokemon) => (
+          <div key={pokemon.name}>{pokemon.name}</div>
+        ))}
+      </div>
+    )
   } else {
     return <div>Loading...</div>
   }

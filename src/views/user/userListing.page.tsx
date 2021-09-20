@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, Prompt } from 'react-router-dom'
 import { ROUTES } from '@constants'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook'
+import { userActions } from '../../store/slices/user.slice'
 
 const UserListingPage = () => {
-  const userIds = [1, 2, 3, 4, 5]
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(userActions.fetchUsers())
+  }, [])
+
+  const users = useAppSelector((state) => state.user.users)
 
   return (
     <div>
       <h1>Welcome To User</h1>
       <hr />
       <h2>User List</h2>
-      {userIds.map((id) => {
+      {users.map(({ id }) => {
         return (
           <Link key={id} to={ROUTES.USER_DETAIL(id)}>
-            User {id}
+            <div style={{ margin: '1rem' }}>User {id}</div>
           </Link>
         )
       })}
-
-      <Prompt message={'Are Your Sure'} />
     </div>
   )
 }
