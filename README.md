@@ -69,7 +69,16 @@ to fix --> eslint ./ --fix
 # Global styling (Theme)
 
 # Environment configuration
+.env, .env.development, .env.test, .env.production
 
+Required prefix REACT_APP_ to the variable name.
+
+ex:
+
+REACT_APP_BASE_URL=localhost
+
+
+refer: https://tacomanator.medium.com/environments-with-create-react-app-7b645312c09d
 # Component
 
 - Decide what components to build base on FSD
