@@ -1,3 +1,2 @@
-import ENVIRONMENT from './environment.constant'
-
-export { ENVIRONMENT }
+export { default as ENVIRONMENT } from './environment.constant'
+export { ROUTES } from './route.constant'

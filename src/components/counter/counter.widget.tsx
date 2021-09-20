@@ -1,36 +1,36 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { AppButton } from '@components'
 import { counterActions } from '../../store/slices/counter.slice'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux.hook'
 
-const CounterWidget = () => {
-  console.log('CounterWidget')
+console.log('CounterWidget.tsx')
 
+const CounterWidget = () => {
   const counter = useAppSelector((state) => state.counter.value)
   const dispatch = useAppDispatch()
   return (
     <div style={{ border: 'red solid 1px' }}>
       <div>Counter: {counter}</div>
       <AppButton
-        label='Plus One'
+        label="Plus One"
         onClick={() => {
           dispatch(counterActions.increment())
         }}
       />
       <AppButton
-        label='Minus One'
+        label="Minus One"
         onClick={() => {
           dispatch(counterActions.decrement())
         }}
       />
       <AppButton
-        label='Double'
+        label="Double"
         onClick={() => {
           dispatch(counterActions.incrementByAmount(counter))
         }}
       />
       <AppButton
-        label='reset'
+        label="reset"
         onClick={() => {
           dispatch(counterActions.reset())
         }}
@@ -39,4 +39,4 @@ const CounterWidget = () => {
   )
 }
 
-export default CounterWidget
+export default memo(CounterWidget)

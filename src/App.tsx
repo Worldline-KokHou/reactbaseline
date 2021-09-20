@@ -1,42 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import logo from './logo.svg'
+import React, { Suspense } from 'react'
 import './App.css'
-import { IpAddressService } from '@services'
-import CounterWidget from './views/counter/counter.widget'
-import PokemonWidget from './views/pokemon/pokemon.widget'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { IAppRouteProps, routers } from './appRouter'
+import AppNavigation from './components/app-navigation/appNavigation'
+import { ROUTES } from '@constants'
 
-function App () {
-  console.log('App')
+console.log('APP.tsx')
+function App() {
+  function flatten(input: IAppRouteProps): IAppRouteProps[] {
+    const { children, ...rest } = input
 
-  const [ip, setIp] = useState('')
-
-  useEffect(() => {
-    IpAddressService.getIp()
-      .then((o) => o.data.ip)
-      .then(setIp)
-  }, [])
+    if (children && children.length) {
+      return [rest, ...children.flatMap(flatten)]
+    } else {
+      return [rest]
+    }
+  }
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo'/>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-        <CounterWidget/>
-        <p/>
-        <PokemonWidget/>
-        <div>Your IP: {ip || 'Loading...'}</div>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div
+        style={{
+          display: 'flex'
+        }}
+      >
+        <AppNavigation />
+        <main>
+          <Suspense fallback={<h1>Loading Apps...</h1>}>
+            <Switch>
+              {routers.flatMap(flatten).map((value, index) => {
+                const { children, ...rest } = value
+                return <Route key={index} {...rest} />
+              })}
+              <Redirect to={ROUTES.HOME()} />
+            </Switch>
+          </Suspense>
+        </main>
+      </div>
+    </BrowserRouter>
   )
 }
 

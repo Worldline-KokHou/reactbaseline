@@ -20,6 +20,12 @@
 
 [React Architecture: How to Structure and Organize a React Application](https://www.taniarascia.com/react-architecture-directory-structure/)
 
+# Routing
+
+[React Router](https://reactrouter.com/web/guides/quick-start)
+
+[Component Lazy Loading](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
+
 ## Assets
 
 Global static assets such as images, svgs, company logo, etc.

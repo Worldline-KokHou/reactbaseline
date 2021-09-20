@@ -6,7 +6,8 @@
       "@components": ["src/components"],
       "@services": ["src/services"],
       "@constants": ["src/utils/constants"],
-      "@client": ["src/utils/http-client"]
+      "@client": ["src/utils/http-client"],
+      "@pages/*": ["src/views/*"]
     }
   }
 }

@@ -1,6 +1,6 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Pokemon } from '../views/pokemon/pokemon.interface'
+import { Pokemon } from '../components/pokemon/pokemon.interface'
 
 // Define a service using a base URL and expected endpoints
 
@@ -10,8 +10,8 @@ interface IPokemonItem {
 }
 
 interface IPokemonList {
-  count: number,
-  next: string,
+  count: number
+  next: string
   previous: string
   results: IPokemonItem[]
 }
@@ -31,7 +31,4 @@ export const pokemonApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {
-  useGetPokemonByNameQuery,
-  useGetPokemonsQuery
-} = pokemonApi
+export const { useGetPokemonByNameQuery, useGetPokemonsQuery } = pokemonApi
