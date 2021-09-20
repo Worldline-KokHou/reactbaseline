@@ -1,3 +1,2 @@
-import * as IpAddressService from './ipAddress.service'
-
-export { IpAddressService }
+export * as IpAddressService from './ipAddress.service'
+export * as UserService from './user.service'
